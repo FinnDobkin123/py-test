@@ -1,15 +1,25 @@
-#Return "damages not recorded" as NA values
-def convert_damages_data(damages):
-    conversion = {"M": 1000000,
-              "B": 1000000000}
-print(type(damages))
+#Import libraries and create lists
+import csv
+import statistics
 
-update_damages = list()
-for damage in damages:
-    if damage == "Damages not recorded":
-        update_damages.append(damage)
+age = []
+sex = []
+bmi = []
+children = []
+smoker = []
+region = []
+charges = []
 
-for damage in update_damages:
-    if damage == "Damages not recorded":
-        damage[0:] == "NA"
+#Import dataset
+with open("insurance.csv", newline = "") as insurance_data:
+    dataset = csv.DictReader(insurance_data, delimiter = ",")
+    headers = dataset.fieldnames 
+    listed_headers = list(headers)
+    dict_parameters = {}
     
+    for header in headers:
+        dict_parameters.update({str(header): []})
+    
+    for row in dataset:
+        for header, value in zip(headers, dict_parameters.values()):
+            value.append(row[header])
