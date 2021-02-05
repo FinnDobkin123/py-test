@@ -5,6 +5,8 @@ import statistics
 #Read insurance.csv
 import csv
 with open('insurance.csv', 'r') as insurance_file:
-    csv_reader = csv.DictReader(insurance_file, delimiter = ',', skipinitialspace=True)
+    fieldnames = ['age', 'sex', 'bmi', 'children', 'smoke', 'region', 'charges']
+    csv_reader = csv.DictReader(insurance_file, delimiter = ',', skipinitialspace=True, 
+                               fieldnames = fieldnames)
     for row in csv_reader:
         print(row)
