@@ -23,3 +23,19 @@ with open('insurance.csv', 'r') as insurance_file:
             smoker.append(float(row['age']))
         elif row['smoke'] == 'no':
             non_smoker.append(float(row['age']))
+
+ #Determine smoking status by BMI
+low_bmi = []
+medium_bmi = []
+high_bmi = []
+with open('insurance.csv', 'r') as insurance_file:
+    fieldnames = ['age', 'sex', 'bmi', 'children', 'smoke', 'region', 'charges']
+    csv_reader = csv.DictReader(insurance_file, delimiter = ',', skipinitialspace=True, 
+                               fieldnames = fieldnames)
+    for weight in bmi:
+        if row['bmi'] > 0 & row['bmi'] < 20:
+           low_bmi.append(float(row['smoke'])
+        elif row['bmi'] >= 20 & row['bmi'] <= 30:
+           medium_bmi.append(float(row['smoke']))
+        else row['bmi'] >= 30:
+           high_bmi.append(float(row['smoke']))
