@@ -24,6 +24,30 @@ with open('insurance.csv', 'r') as insurance_file:
         elif row['smoke'] == 'no':
             non_smoker.append(float(row['age']))
 
+#Calculate Five Number Summary for Smoker Status Age
+##Import libraries
+from numpy import percentile
+from numpy.random import rand
+##Calculate Values 
+quartiles_smoker = percentile(smoker, [25, 50, 75])
+quartiles_non_smoker = percentile(non_smoker[25, 50, 75])
+data_min_smoker, data_max_smoker = data.min(smoker), data.max(smoker)
+data_min_nonsmoker, data_max_nonsmoker = data.min(non_smoker), data.max(non_smoker)
+##Print minimum and maximum values
+print('The minimum age for non-smokers is ' + str(data_min_nonsmoker))
+print('The maximum age for non-smokers is ' + str(data_max_nonsmoker))
+print('The minimum age for smokers is ' + str(data_min_smoker))
+print('The maximum age for smokers is ' + str(data_max_smoker))
+##Print first quartile ages values
+print("The 25th percentile of age for non smokers is " + str(quartiles_non_smoker[0]))
+print("The 25th percentile of age for smokers is " + str(quartiles_smoker[0]))
+##Print median ages values
+print("The median age for non smokers is " + str(quartiles_non_smoker[1]))
+print("The median age for smokers is " + str(quartiles_smoker[1]))
+##Print first quartile ages values
+print("The 75th percentile of age for non smokers is " + str(quartiles_non_smoker[2]))
+print("The 75th percentile of age for smokers is " + str(quartiles_smoker[2]))
+
  #Determine smoking status by BMI
 low_bmi = []
 medium_bmi = []
