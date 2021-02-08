@@ -63,3 +63,6 @@ with open('insurance.csv', 'r') as insurance_file:
            medium_bmi.append(float(row['smoke']))
         else row['bmi'] >= 30:
            high_bmi.append(float(row['smoke']))
+#Create a dataframe and describe
+insurance = pd.DataFrame(insurance_file) 
+print insurance.describe(include = 'all')
