@@ -19,9 +19,9 @@ with open('insurance.csv', 'r') as insurance_file:
     csv_reader = csv.DictReader(insurance_file, delimiter = ',', skipinitialspace=True, 
                                fieldnames = fieldnames)
     for status in insurance_file:
-        if row['smoke'] == 'yes':
+        if ['smoke'] == 'yes':
             smoker.append(float(row['age']))
-        elif row['smoke'] == 'no':
+        elif ['smoke'] == 'no':
             non_smoker.append(float(row['age']))
 
 #Calculate Five Number Summary for Smoker Status Age
