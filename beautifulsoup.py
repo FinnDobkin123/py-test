@@ -1,4 +1,4 @@
-#Scrape data
+#Prepare scraper
 import requests
 from bs4 import BeautifulSoup
 url = "https://www.healthaffairs.org/toc/hlthaff/current"
