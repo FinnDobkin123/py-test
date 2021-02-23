@@ -1,3 +1,4 @@
+##Text data
 #Prepare scraper
 import requests
 from bs4 import BeautifulSoup
@@ -16,7 +17,4 @@ for test in tests:
     temp = test.text
     temp2 = temp.split("")
 
-#Put into dataframe
-import numpy as np
-import pandas as pd
-from urllib.request import urlopen
+##Tabular Data
